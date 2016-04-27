@@ -13,6 +13,8 @@
 		8C3F84AF1CD0F4F000F35638 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84AD1CD0F4F000F35638 /* Main.storyboard */; };
 		8C3F84B11CD0F4F000F35638 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84B01CD0F4F000F35638 /* Assets.xcassets */; };
 		8C3F84B41CD0F4F000F35638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84B21CD0F4F000F35638 /* LaunchScreen.storyboard */; };
+		8C3F84BD1CD1032300F35638 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F84BC1CD1032300F35638 /* Landmark.m */; };
+		8C3F84BF1CD1450400F35638 /* ironYardRaleigh.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		8C3F84B01CD0F4F000F35638 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C3F84B31CD0F4F000F35638 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C3F84B51CD0F4F000F35638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C3F84BB1CD1032300F35638 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
+		8C3F84BC1CD1032300F35638 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
+		8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ironYardRaleigh.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 		8C3F84981CD0F4F000F35638 = {
 			isa = PBXGroup;
 			children = (
+				8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */,
 				8C3F84A31CD0F4F000F35638 /* WhereTo */,
 				8C3F84A21CD0F4F000F35638 /* Products */,
 			);
@@ -62,6 +68,8 @@
 				8C3F84A81CD0F4F000F35638 /* AppDelegate.m */,
 				8C3F84AA1CD0F4F000F35638 /* ViewController.h */,
 				8C3F84AB1CD0F4F000F35638 /* ViewController.m */,
+				8C3F84BB1CD1032300F35638 /* Landmark.h */,
+				8C3F84BC1CD1032300F35638 /* Landmark.m */,
 				8C3F84AD1CD0F4F000F35638 /* Main.storyboard */,
 				8C3F84B01CD0F4F000F35638 /* Assets.xcassets */,
 				8C3F84B21CD0F4F000F35638 /* LaunchScreen.storyboard */,
@@ -137,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3F84BF1CD1450400F35638 /* ironYardRaleigh.gpx in Resources */,
 				8C3F84B41CD0F4F000F35638 /* LaunchScreen.storyboard in Resources */,
 				8C3F84B11CD0F4F000F35638 /* Assets.xcassets in Resources */,
 				8C3F84AF1CD0F4F000F35638 /* Main.storyboard in Resources */,
@@ -153,6 +162,7 @@
 				8C3F84AC1CD0F4F000F35638 /* ViewController.m in Sources */,
 				8C3F84A91CD0F4F000F35638 /* AppDelegate.m in Sources */,
 				8C3F84A61CD0F4F000F35638 /* main.m in Sources */,
+				8C3F84BD1CD1032300F35638 /* Landmark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+//Make sure when adding a class in code or through Storyboard, make sure you import the .h file. Never never never .m NO DON'T DO IT!
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //coded a window without storyboards (bounds is the screen given)
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    //create an instance of a viewcontroller object, but don't forget to import at the top!!!
+    ViewController * viewController = [[ViewController alloc]init];
+    
+    //I need a navigation controller AFTER we declare and initialize the ViewController.
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    
+    // Put the navController now inside the window I already created
+    self.window.rootViewController = navController;
+    
+    //Make the window visible to the user.  Gives focus to the window I made.
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
