@@ -20,7 +20,7 @@
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (strong, nonatomic) UIPopoverPresentationController *popController;
 - (void)showPopover:(id)sender;
--(void)dismiss;
+-(void)cancel;
 
 @end
 
@@ -146,7 +146,7 @@
     
 }
 
-- (void)dismiss {
+- (void)cancel {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -157,7 +157,7 @@
 
 - (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
     // If you don't want a nav controller when it's a popover, don't use one in the storyboard and instead return a nav controller here
-    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:controller.presentedViewController];
     nc.navigationBar.topItem.rightBarButtonItem = bbi;
     return nc;
