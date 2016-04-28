@@ -10,27 +10,28 @@
 #import "Landmark.h"
 // Frameworks are in <> and not ""
 #import <MapKit/MapKit.h>
+#import "popupViewController.h"
 
-@interface ViewController ()
+
+@interface ViewController () <CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) UIBarButtonItem *addButton;
+@property (strong, nonatomic) UIPopoverPresentationController *popController;
+- (void)showPopover:(id)sender;
+-(void)dismiss;
 
 @end
-
-//http://nshipster.com/core-location-in-ios-8/
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Add"
-                                   style:UIBarButtonItemStyleDone
-                                   target:self
-                                   action:@selector(popoverController)];
-    self.navigationItem.leftBarButtonItem = addButton;
+    self.addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showPopover:)];
+    
+    self.navigationItem.leftBarButtonItem = self.addButton;
     
     //CGRect is a struct or value type. A vanilla container object that has some values in it.
     CGRect theFrame = self.view.frame;
@@ -41,9 +42,8 @@
     theFrame.size.width -= 2;
     theFrame.size.height -= 66;
     
-    CLLocationManager *manager = [[CLLocationManager alloc]init];
-    [manager requestAlwaysAuthorization];
-    self.manager = manager;
+    self.manager = [[CLLocationManager alloc]init];
+    [self.manager requestAlwaysAuthorization];
     
     //Since it is a map it wants a frame!
     self.mapView = [[MKMapView alloc]initWithFrame:theFrame];
@@ -130,5 +130,40 @@
     
     [manager stopUpdatingLocation];
 }
+
+- (void)showPopover:(id)sender{
+    
+    popupViewController *popup = [[popupViewController alloc] init];
+    popup.modalPresentationStyle = UIModalPresentationPopover;
+    
+    UIPopoverPresentationController *popController = [popup popoverPresentationController];
+    self.popController = popController;
+    popController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    popController.barButtonItem = sender;
+    popController.delegate = self;
+
+    [self presentViewController:popup animated:YES completion:nil];
+    
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationFullScreen; // required, otherwise delegate method below is never called.
+}
+
+- (UIViewController *)presentationController:(UIPresentationController *)controller viewControllerForAdaptivePresentationStyle:(UIModalPresentationStyle)style {
+    // If you don't want a nav controller when it's a popover, don't use one in the storyboard and instead return a nav controller here
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:controller.presentedViewController];
+    nc.navigationBar.topItem.rightBarButtonItem = bbi;
+    return nc;
+}
+
+
+
 
 @end

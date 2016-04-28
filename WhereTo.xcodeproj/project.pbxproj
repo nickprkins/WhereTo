@@ -15,6 +15,7 @@
 		8C3F84B41CD0F4F000F35638 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84B21CD0F4F000F35638 /* LaunchScreen.storyboard */; };
 		8C3F84BD1CD1032300F35638 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F84BC1CD1032300F35638 /* Landmark.m */; };
 		8C3F84BF1CD1450400F35638 /* ironYardRaleigh.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */; };
+		8CF4CFCC1CD28A0A00E992FA /* popupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4CFCB1CD28A0A00E992FA /* popupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		8C3F84BB1CD1032300F35638 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
 		8C3F84BC1CD1032300F35638 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
 		8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ironYardRaleigh.gpx; sourceTree = "<group>"; };
+		8CF4CFCA1CD28A0A00E992FA /* popupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popupViewController.h; sourceTree = "<group>"; };
+		8CF4CFCB1CD28A0A00E992FA /* popupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				8C3F84A81CD0F4F000F35638 /* AppDelegate.m */,
 				8C3F84AA1CD0F4F000F35638 /* ViewController.h */,
 				8C3F84AB1CD0F4F000F35638 /* ViewController.m */,
+				8CF4CFCA1CD28A0A00E992FA /* popupViewController.h */,
+				8CF4CFCB1CD28A0A00E992FA /* popupViewController.m */,
 				8C3F84BB1CD1032300F35638 /* Landmark.h */,
 				8C3F84BC1CD1032300F35638 /* Landmark.m */,
 				8C3F84AD1CD0F4F000F35638 /* Main.storyboard */,
@@ -161,6 +166,7 @@
 			files = (
 				8C3F84AC1CD0F4F000F35638 /* ViewController.m in Sources */,
 				8C3F84A91CD0F4F000F35638 /* AppDelegate.m in Sources */,
+				8CF4CFCC1CD28A0A00E992FA /* popupViewController.m in Sources */,
 				8C3F84A61CD0F4F000F35638 /* main.m in Sources */,
 				8C3F84BD1CD1032300F35638 /* Landmark.m in Sources */,
 			);
@@ -313,6 +319,7 @@
 				8C3F84BA1CD0F4F000F35638 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
