@@ -27,6 +27,7 @@
     self.firstDestination = [[UITextField alloc] initWithFrame:CGRectMake(45, 120, 200, 40)];
     self.firstDestination.textColor = [UIColor darkGrayColor];
     self.firstDestination.font = [UIFont fontWithName:@"Apple SD-Gothic Neo" size:25];
+    self.firstDestination.autocorrectionType = UITextAutocorrectionTypeNo;
     self.firstDestination.backgroundColor=[UIColor whiteColor];
     self.firstDestination.borderStyle = UITextBorderStyleRoundedRect;
     self.firstDestination.placeholder=@"City, State";
@@ -38,6 +39,7 @@
     self.secondDestination = [[UITextField alloc] initWithFrame:CGRectMake(45, self.firstDestination.frame.origin.y+75, 200, 40)];
     self.secondDestination.textColor = [UIColor darkGrayColor];
     self.secondDestination.font = [UIFont fontWithName:@"Apple SD-Gothic Neo" size:25];
+    self.secondDestination.autocorrectionType = UITextAutocorrectionTypeNo;
     self.secondDestination.backgroundColor=[UIColor whiteColor];
     self.secondDestination.borderStyle = UITextBorderStyleRoundedRect;
     self.secondDestination.placeholder=@"City, State";
@@ -79,11 +81,28 @@
 
 - (void)giveMeCoordinates:(NSArray *)theAddresses{
     
+    NSString * firstAddress = theAddresses[0];
+    NSString * secondAddress = theAddresses[1];
     NSLog(@"%@", theAddresses[0]);
     NSLog(@"%@", theAddresses[1]);
     
+    // initialize CLGeocoder to take the input and create coordinates to be put on the map.
     CLGeocoder *geocoder = [[CLGeocoder alloc]init];
-    geocoder
+    // geocodeAddressString must be used when given City and State input
+    [geocoder geocodeAddressString:firstAddress completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        Landmark *addressCoordinate = nil;
+        if (error) {
+            NSLog(@"%@", [error description]);
+        } else {
+        //A CLPlacemark object stores placemark data for a given latitude and longitude.
+        CLPlacemark *placemark = [placemarks lastObject];
+        addressCoordinate = [[Landmark alloc] initWithCoord:CLLocationCoordinate2DMake(placemark.location.coordinate.latitude, placemark.location.coordinate.longitude) title:firstAddress subtitle:@""];
+            
+        
+        }
+    }];
+
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

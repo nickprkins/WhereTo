@@ -13,7 +13,7 @@
 #import "popupViewController.h"
 
 
-@interface ViewController () <CLLocationManagerDelegate, UIPopoverPresentationControllerDelegate>
+@interface ViewController () <CLLocationManagerDelegate,UIPopoverPresentationControllerDelegate>
 
 @property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *manager;
@@ -70,6 +70,9 @@
     if (currentLocation && capitalLocation) {
         
         [self zoomMapToRegionEncapsulatingLocation:capitalLocation andLocation:currentLocation];
+        
+        //Get Directions MKDirectionsRequest?
+
         
     }
     // Do any additional setup after loading the view, typically from a nib.

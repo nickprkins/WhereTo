@@ -16,6 +16,7 @@
 		8C3F84BD1CD1032300F35638 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F84BC1CD1032300F35638 /* Landmark.m */; };
 		8C3F84BF1CD1450400F35638 /* ironYardRaleigh.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */; };
 		8CF4CFCC1CD28A0A00E992FA /* popupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF4CFCB1CD28A0A00E992FA /* popupViewController.m */; };
+		8CF4CFD21CD3AF1900E992FA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF4CFD11CD3AF1900E992FA /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ironYardRaleigh.gpx; sourceTree = "<group>"; };
 		8CF4CFCA1CD28A0A00E992FA /* popupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popupViewController.h; sourceTree = "<group>"; };
 		8CF4CFCB1CD28A0A00E992FA /* popupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popupViewController.m; sourceTree = "<group>"; };
+		8CF4CFD11CD3AF1900E992FA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF4CFD21CD3AF1900E992FA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 		8C3F84981CD0F4F000F35638 = {
 			isa = PBXGroup;
 			children = (
+				8CF4CFD11CD3AF1900E992FA /* MapKit.framework */,
 				8C3F84BE1CD1450400F35638 /* ironYardRaleigh.gpx */,
 				8C3F84A31CD0F4F000F35638 /* WhereTo */,
 				8C3F84A21CD0F4F000F35638 /* Products */,
@@ -124,6 +128,11 @@
 					8C3F84A01CD0F4F000F35638 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = N9X5Q7FUAG;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
